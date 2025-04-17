@@ -110,6 +110,7 @@ const createOffer=async()=>{
   await pcRef.current.setLocalDescription(offer);
   localStorage.setItem('offer',JSON.stringify(offer));
   setOfferCreated(true);
+
 }
   
   return (
@@ -138,7 +139,7 @@ const createOffer=async()=>{
           className="w-1/2 bg-black rounded-lg"
         />
       </div>
-    </div>
+    </div> 
 
   )
 }

@@ -2,15 +2,13 @@
 import { createContext, useContext } from "react";
 // import socket from "../../socket";
 import {io} from "socket.io-client";
-const socket = io("http://localhost:3000"); // replace with your actual server URL
-
-
-const SocketContext=createContext(null);
+const socket = io(); // replace with your actual server URL
+export const SocketContext=createContext(null);
 
 const socketContextProvider=({children})=>{
-    const useSocket=useContext(SocketContext);
+    // const useSocket=useContext(SocketContext);
     return(
-        <SocketContext.Provider value={{socket,useSocket}}>
+        <SocketContext.Provider value={{socket}}>
             {children}
         </SocketContext.Provider>
     )

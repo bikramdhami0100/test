@@ -1,13 +1,11 @@
 "use client";
-import React, { useContext, useEffect, useState } from 'react'
+import socket from "../socket";
+import React, { useEffect, useState } from 'react'
 import JoinRoomForm from './components/JoinRoomForm';
 import { useRouter } from 'next/navigation';
-import { SocketContext } from './context/SocketContext';
 
 function Home() {
 
-  const {socket}=useContext(SocketContext);
-  // console.log(socket)
 const [roomId, setRoomId] = useState("");
 const [email, setEmail] = useState("");
 const router = useRouter();
